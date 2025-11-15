@@ -1,0 +1,161 @@
+/* Base body */
+body {
+  font-family: sans-serif;
+  background: #111;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Neon Purple Italic */
+.itlic {
+  color: #da00ff;
+  text-shadow: 
+    0 0 5px #da00ff,
+    0 0 10px #da00ff,
+    0 0 20px #ff6fff,
+    0 0 40px #ff6fff;
+  font-style: italic;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.itlic:hover {
+  text-shadow: 
+    0 0 10px #da00ff,
+    0 0 20px #ff6fff,
+    0 0 30px #ff9fff,
+    0 0 50px #ff9fff;
+  transform: scale(1.05);
+}
+
+/* Splash Screen */
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #4b0082, #2a004d);
+  animation: pulse-bg 3s infinite alternate;
+}
+
+.splash-text {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.splash-btn {
+  font-size: 1.2em;
+  padding: 15px 30px;
+  border-radius: 12px;
+  border: 2px solid #da00ff;
+  cursor: pointer;
+}
+
+.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; transform: scale(0.95); }
+}
+
+@keyframes pulse-bg {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+/* Video feed vertical scroll */
+.video-feed {
+  display: flex;
+  flex-direction: column;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  background: #111;
+}
+
+.video-card {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background: #000;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Video actions */
+.video-actions {
+  position: absolute;
+  bottom: 50px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Comment section */
+.comment-section {
+  position: absolute;
+  bottom: 120px;
+  left: 15px;
+  max-width: 70%;
+}
+
+/* Neon comments */
+.comment {
+  background: rgba(0,0,0,0.5);
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  color: #da00ff;
+  text-shadow: 
+    0 0 5px #da00ff,
+    0 0 10px #ff6fff;
+  font-style: italic;
+  position: relative;
+  animation: floatUp 5s linear forwards;
+}
+
+/* Floating animation for TikTok-style comments */
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-150px); opacity: 0; }
+}
+
+/* Buttons */
+button.itlic {
+  background: #2a004d;
+  border: 2px solid #da00ff;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button.itlic:hover {
+  background: #4b0082;
+  box-shadow: 0 0 10px #da00ff, 0 0 20px #ff6fff;
+}
+
+/* Upload page */
+.upload-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 15px;
+  background: #111;
+}
